@@ -1508,7 +1508,7 @@ class UploadBehavior extends ModelBehavior {
 		$image = imagecreatefromjpeg($filename);
 		$exif = array();
 		if (function_exists('exif_read_data')) {
-			$exif = exif_read_data($filename);
+			$exif = @exif_read_data($filename);
 		}
 
 		if ($image && isset($exif['Orientation']) == true) {
