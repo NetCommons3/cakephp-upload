@@ -357,7 +357,7 @@ class UploadBehavior extends ModelBehavior {
 			return move_uploaded_file($filename, $destination);
 		}
 
-		return rename($filename, $destination);
+		return @rename($filename, $destination);
 	}
 
 /**
